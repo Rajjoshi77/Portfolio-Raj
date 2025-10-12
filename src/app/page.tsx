@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
-import ProjectCards from "./components/ProjectCards";
-import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -11,7 +9,7 @@ export default function Home() {
         {/* Left Text Section */}
         <div className="space-y-6 max-w-xl">
           <h1 className="text-4xl md:text-6xl font-bold">
-            Hi, I'm <span className="text-cyan-400">Raj Joshi</span>
+            Hi, I&apos;m <span className="text-cyan-400">Raj Joshi</span>
           </h1>
           <p className="text-gray-300 text-lg">
             I’m a passionate full-stack developer focused on building modern web
