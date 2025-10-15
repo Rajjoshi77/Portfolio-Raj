@@ -59,6 +59,7 @@ export default function NavBar() {
       <motion.div
         whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ type: "spring", stiffness: 300 }}
+        className="flex items-center gap-4"
       >
         <div className="hidden md:flex items-center gap-4 mr-4 text-lg">
           <a href="https://github.com/rajjoshi7" target="_blank" className="hover:text-cyan-300">
@@ -71,6 +72,27 @@ export default function NavBar() {
             <FaEnvelope />
           </a>
         </div>
+
+        <a
+          href="/Raj Joshi_Resume(1).pdf"
+          download
+          className="hidden md:flex items-center px-3 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg
+                     hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105
+                     shadow-lg hover:shadow-cyan-500/50 text-sm"
+        >
+          <svg 
+            className="w-4 h-4 mr-2" 
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Resume
+        </a>
 
         <div
           className="w-12 h-12 rounded-full border-2 border-cyan-400 overflow-hidden shadow-lg cursor-pointer hover:shadow-cyan-500/50 transition-all"
@@ -92,6 +114,25 @@ export default function NavBar() {
           <div className="absolute top-16 left-4 right-4 bg-slate-900 rounded-lg p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
             <nav className="flex flex-col gap-4">
               <Link href="/" className="text-lg font-medium text-cyan-300" onClick={() => setMobileOpen(false)}>Dashboard</Link>
+              <a
+                href="/Raj Joshi_Resume(1).pdf"
+                download
+                className="flex items-center px-3 py-2 text-lg font-medium text-cyan-300 hover:bg-cyan-500/10 rounded-lg"
+                onClick={() => setMobileOpen(false)}
+              >
+                <svg 
+                  className="w-5 h-5 mr-2" 
+                  fill="none" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth="2" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download Resume
+              </a>
               {[
                 { label: "achievement", href: "/achievement" },
                 { label: "projects", href: "/projects" },
