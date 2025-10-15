@@ -31,54 +31,87 @@ export default function Projects() {
   ];
 
   return (
-  <div className="min-h-screen bg-slate-900 flex flex-col items-center px-4 py-10">
+  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 flex flex-col items-center px-4 py-10">
       
-      {/* Header */}
-      <motion.h1
-        className="text-5xl md:text-6xl font-bold text-cyan-400 mb-12 text-center"
+      {/* Header with Gradient */}
+      <motion.div
+        className="text-center mb-16"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        My Projects
-      </motion.h1>
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
+          My Projects
+        </h1>
+        <div className="w-24 h-1 mx-auto bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+      </motion.div>
 
       {/* Project Cards */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-6xl"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-7xl px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
       >
         {projects.map((project, idx) => (
-          <motion.div
+          <motion.a
             key={idx}
-            className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow cursor-pointer border-l-4 border-cyan-500"
-            whileHover={{ scale: 1.05 }}
+            href={project.link}
+            target="_blank"
+            className="group relative bg-white/10 backdrop-blur-lg rounded-xl p-6 hover:bg-white/[0.15] border border-cyan-500/20 hover:border-cyan-400 transition-all duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.2 }}
+            whileHover={{ 
+              scale: 1.02,
+              transition: { duration: 0.2 }
+            }}
           >
-            <h2 className="text-2xl font-bold text-cyan-700 mb-2">{project.title}</h2>
-            <p className="text-cyan-500 font-medium mb-2">{project.tech}</p>
-            <p className="text-gray-700 mb-4">{project.description}</p>
-            <a
-              href={project.link}
-              className="text-cyan-400 font-semibold hover:underline"
-              target="_blank"
-            >
-              View Project
-            </a>
-          </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-3 group-hover:text-cyan-300 transition-colors">
+                {project.title}
+              </h2>
+              <div className="flex flex-wrap gap-2 mb-3">
+                {project.tech.split(", ").map((tech, techIdx) => (
+                  <span 
+                    key={techIdx}
+                    className="px-2 py-1 text-sm bg-cyan-500/20 text-cyan-300 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex items-center text-cyan-400 font-medium group-hover:text-cyan-300 transition-colors">
+                View Project
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </motion.a>
         ))}
       </motion.div>
 
       {/* Footer Quote */}
-      <motion.p
-        className="mt-16 text-gray-600 italic text-center max-w-xl"
+      <motion.div
+        className="mt-16 text-center max-w-2xl mx-auto px-4"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-  &quot;Projects are the proof of your skills and creativity.&quot;
-      </motion.p>
+        <div className="relative">
+          <div className="absolute -top-4 left-0 text-5xl text-cyan-500/20">&ldquo;</div>
+          <p className="text-gray-300 italic text-lg leading-relaxed">
+            Projects are the living proof of your skills and creativity in action.
+          </p>
+          <div className="absolute -bottom-8 right-0 text-5xl text-cyan-500/20">&rdquo;</div>
+        </div>
+      </motion.div>
 
     </div>
   );
