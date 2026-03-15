@@ -5,34 +5,58 @@ import { motion } from "framer-motion";
 export default function Projects() {
   const projects = [
     {
+      title: "AI-Based Smart Traffic Management System",
+      tech: "Machine Learning, Python",
+      description: "Developing an intelligent traffic prediction system using machine learning algorithms to analyze congestion patterns and optimize traffic flow in urban areas.",
+      link: "#",
+    },
+    {
+      title: "Voxa-AI Platform",
+      tech: "Python, AI Models, Google Colab, Ngrok",
+      description: "Built an AI-powered platform featuring user authentication and text-to-image generation capabilities using Python-based models.",
+      link: "#",
+    },
+    {
+      title: "MERN Stack Job Portal",
+      tech: "MongoDB, Express.js, React.js, Node.js",
+      description: "Created a full-stack job portal application enabling job listings, applications, and user management with RESTful API architecture.",
+      link: "#",
+    },
+    {
+      title: "Voice Calendar System",
+      tech: "Python, Speech Synthesis",
+      description: "Developed a Python-based smart calendar application that manages events through voice commands and text input, featuring speech synthesis for event summaries.",
+      link: "#",
+    },
+    {
+      title: "Speech Recognition System",
+      tech: "Python, Speech-to-Text",
+      description: "Implemented a speech-to-text conversion system in Python to enable hands-free interaction and voice-based command execution.",
+      link: "#",
+    },
+    {
+      title: "Cricket Team Management System",
+      tech: "React, Node.js, MySQL",
+      description: "Built a web-based management system for organizing player data, match preparation, team analytics, and performance tracking.",
+      link: "#",
+    },
+    {
+      title: "Chrome Extensions Development",
+      tech: "JavaScript, HTML, CSS",
+      description: "Designed and developed custom Google Chrome extensions to automate browser tasks and enhance user productivity.",
+      link: "#",
+    },
+    {
       title: "MemoryVault",
       tech: "React, Node.js, MongoDB, Tailwind CSS",
       description: "A unique memory journaling platform with sentiment analysis and emotional tagging.",
       link: "#",
     },
-    {
-      title: "FinanceForesight",
-      tech: "Streamlit, Python, Pandas",
-      description: "A finance prediction and analytics tool to help users forecast expenses and income.",
-      link: "#",
-    },
-    {
-      title: "Cricket Team Management",
-      tech: "React, Node.js, MySQL",
-      description: "A web app to manage cricket teams, player stats, and match schedules.",
-      link: "#",
-    },
-    {
-      title: "Blockchain Demo",
-      tech: "Python, Flask",
-      description: "A blockchain-based demo project showcasing basic ledger and transaction simulation.",
-      link: "#",
-    },
   ];
 
   return (
-  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 flex flex-col items-center px-4 py-10">
-      
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 flex flex-col items-center px-4 py-10">
+
       {/* Header with Gradient */}
       <motion.div
         className="text-center mb-16"
@@ -62,20 +86,20 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.2 }}
-            whileHover={{ 
+            whileHover={{
               scale: 1.02,
               transition: { duration: 0.2 }
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-            
+
             <div className="relative z-10">
               <h2 className="text-2xl font-bold text-cyan-400 mb-3 group-hover:text-cyan-300 transition-colors">
                 {project.title}
               </h2>
               <div className="flex flex-wrap gap-2 mb-3">
                 {project.tech.split(", ").map((tech, techIdx) => (
-                  <span 
+                  <span
                     key={techIdx}
                     className="px-2 py-1 text-sm bg-cyan-500/20 text-cyan-300 rounded-full"
                   >
