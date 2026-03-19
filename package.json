@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "framer-motion": "^12.23.22",
+<<<<<<< HEAD
     "next": "15.5.9",
+=======
+    "next": "^16.1.6",
+>>>>>>> a895c1d (updated Resume)
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0"
