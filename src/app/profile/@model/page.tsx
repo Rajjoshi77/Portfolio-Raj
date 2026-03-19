@@ -1,12 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
-type Props = {
-  closeModal: () => void;
-};
 
-export default function ProfileModal({ closeModal }: Props) {
+
+export default function ProfileModal() {
+    const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const closeModal = () => {
+    const params = new URLSearchParams(Array.from(searchParams?.entries() || []));
+    params.delete("modal");
+    router.push(`${pathname}?${params.toString()}`);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
