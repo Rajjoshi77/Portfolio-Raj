@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Projects() {
   const projects = [
@@ -52,6 +53,20 @@ export default function Projects() {
       description: "A unique memory journaling platform with sentiment analysis and emotional tagging.",
       link: "#",
     },
+    {
+      title: "Serenity Grand Hotel",
+      tech: "Next.js, React, Tailwind CSS",
+      description: "A luxury hotel website featuring a modern design, room showcases, and a booking interface.",
+      link: "https://hotel-website-five-lovat.vercel.app/",
+      image: "/hotel-website.png"
+    },
+    {
+      title: "RDFS Distributed File System",
+      tech: "Distributed Systems, React, Node.js, Next.js",
+      description: "A comprehensive distributed file system simulator featuring real-time metrics, cluster topology visualization, and storage management.",
+      link: "https://rfs-two.vercel.app/",
+      image: "/rdfs.png"
+    },
   ];
 
   return (
@@ -93,7 +108,17 @@ export default function Projects() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 h-full flex flex-col">
+              {project.image && (
+                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg border border-cyan-500/20 group-hover:border-cyan-400/40 transition-colors">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              )}
               <h2 className="text-2xl font-bold text-cyan-400 mb-3 group-hover:text-cyan-300 transition-colors">
                 {project.title}
               </h2>
@@ -107,10 +132,10 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <p className="text-gray-300 mb-4 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed flex-grow">
                 {project.description}
               </p>
-              <div className="flex items-center text-cyan-400 font-medium group-hover:text-cyan-300 transition-colors">
+              <div className="flex items-center text-cyan-400 font-medium group-hover:text-cyan-300 transition-colors mt-auto">
                 View Project
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
