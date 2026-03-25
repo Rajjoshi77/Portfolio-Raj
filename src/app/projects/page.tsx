@@ -9,7 +9,7 @@ export default function Projects() {
       title: "AI-Based Smart Traffic Management System",
       tech: "Machine Learning, Python",
       description: "Developing an intelligent traffic prediction system using machine learning algorithms to analyze congestion patterns and optimize traffic flow in urban areas.",
-      link: "#",
+      link: "https://smart-traffic-management-hazel.vercel.app/",
     },
     {
       title: "Voxa-AI Platform",
