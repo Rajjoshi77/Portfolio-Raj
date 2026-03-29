@@ -36,7 +36,7 @@ export default function Home() {
             <a href="https://linkedin.com/" target="_blank" className="hover:text-cyan-400">
               <FaLinkedin />
             </a>
-            <a href="mailto:raj@example.com" className="hover:text-cyan-400">
+            <a href="mailto:rajj94380@gmail.com" className="hover:text-cyan-400">
               <FaEnvelope />
             </a>
             <a href="https://twitter.com/" target="_blank" className="hover:text-cyan-400">
