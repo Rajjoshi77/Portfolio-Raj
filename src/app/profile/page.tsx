@@ -5,7 +5,7 @@ export default function ProfilePage() {
       
       <div className="flex flex-col items-center space-y-4">
         <a
-          href="/Raj Joshi_Resume(1).pdf"
+          href="/Raj_Joshi_CV_pdeu.pdf"
           download
           className="flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg
                      hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105

@@ -115,7 +115,7 @@ export default function NavBar() {
             <nav className="flex flex-col gap-4">
               <Link href="/" className="text-lg font-medium text-cyan-300" onClick={() => setMobileOpen(false)}>Dashboard</Link>
               <a
-                href="/Raj Joshi_Resume(1).pdf"
+                href="/Raj_Joshi_CV_pdeu.pdf"
                 download
                 className="flex items-center px-3 py-2 text-lg font-medium text-cyan-300 hover:bg-cyan-500/10 rounded-lg"
                 onClick={() => setMobileOpen(false)}
