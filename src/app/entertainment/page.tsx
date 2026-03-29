@@ -1,11 +1,13 @@
 export default function Entertainment() {
   const spotifyEmbedUrl = "https://open.spotify.com/embed/playlist/7qxn6GsFH77ghVtKzOnAYA";
   const playlistTracks = [
-    "• Stay - The Kid LAROI, Justin Bieber",
-    "• As It Was - Harry Styles",
+    "• Kesariya - Arijit Singh",
+    "• Tum Hi Ho - Arijit Singh",
+    "• Dil Diyan Gallan - Atif Aslam",
+    "• Raataan Lambiyan - Jubin Nautiyal, Asees Kaur",
+    "• Lut Gaye - Jubin Nautiyal",
     "• Blinding Lights - The Weeknd",
-    "• Sunflower - Post Malone, Swae Lee",
-    "• Heat Waves - Glass Animals",
+    "• Stay - The Kid LAROI, Justin Bieber",
   ];
 
   const entertainmentItems = [
