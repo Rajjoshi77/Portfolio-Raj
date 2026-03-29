@@ -1,14 +1,14 @@
+import GameCard from "./GameCard";
+
 export default function Entertainment() {
   const spotifyEmbedUrl = "https://open.spotify.com/embed/playlist/7qxn6GsFH77ghVtKzOnAYA";
-  const playlistTracks = [
-    "• Kesariya - Arijit Singh",
-    "• Tum Hi Ho - Arijit Singh",
-    "• Dil Diyan Gallan - Atif Aslam",
-    "• Raataan Lambiyan - Jubin Nautiyal, Asees Kaur",
-    "• Lut Gaye - Jubin Nautiyal",
-    "• Blinding Lights - The Weeknd",
-    "• Stay - The Kid LAROI, Justin Bieber",
-  ];
+  const movieEmbedUrl = "https://www.youtube.com/embed/aqz-KE-bpKQ";
+  const movieDetails = {
+    title: "Big Buck Bunny",
+    duration: "10m 35s",
+    genre: "Animated short",
+    studio: "Blender Foundation",
+  };
 
   const entertainmentItems = [
     {
@@ -37,13 +37,63 @@ export default function Entertainment() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-3 items-stretch">
           {entertainmentItems.map((item) => {
+            if (item.title === "Movie Picks") {
+              return (
+                <div
+                  key={item.title}
+                  className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-cyan-500/10 transition hover:-translate-y-1 hover:bg-white/10"
+                >
+                  <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{item.title}</h2>
+                  <div className="space-y-6 flex-1">
+                    <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
+                      <iframe
+                        src={movieEmbedUrl}
+                        width="100%"
+                        height="215"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full min-h-[215px]"
+                      />
+                    </div>
+                    <div className="space-y-4">
+                      <p className="text-gray-300 leading-relaxed">
+                        Watch a short animation with a playful story and beautiful visuals. Perfect for a quick creative break.
+                      </p>
+                      <div className="rounded-3xl border border-white/10 bg-slate-950 p-4 text-gray-300">
+                        <p className="font-semibold text-cyan-300">Movie details</p>
+                        <ul className="mt-3 space-y-2 text-sm">
+                          <li>• Title: {movieDetails.title}</li>
+                          <li>• Duration: {movieDetails.duration}</li>
+                          <li>• Genre: {movieDetails.genre}</li>
+                          <li>• Studio: {movieDetails.studio}</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            if (item.title === "Gaming Favorites") {
+              return (
+                <div
+                  key={item.title}
+                  className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-cyan-500/10 transition hover:-translate-y-1 hover:bg-white/10"
+                >
+                  <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{item.title}</h2>
+                  <GameCard />
+                </div>
+              );
+            }
+
             if (item.title === "Music & Chill") {
               return (
                 <div
                   key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-cyan-500/10 transition hover:-translate-y-1 hover:bg-white/10"
+                  className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-cyan-500/10 transition hover:-translate-y-1 hover:bg-white/10"
                 >
                   <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{item.title}</h2>
                   <div className="space-y-6">
@@ -57,24 +107,7 @@ export default function Entertainment() {
                         className="w-full min-h-[380px]"
                       />
                     </div>
-                    <p className="mt-4 text-sm text-gray-400">
-                      If the playlist iframe is blocked locally, open it directly in Spotify:
-                    </p>
-                    <a
-                      href="https://open.spotify.com/playlist/7qxn6GsFH77ghVtKzOnAYA"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex rounded-full border border-cyan-300 px-4 py-2 text-sm font-semibold text-cyan-300 hover:bg-cyan-400/10"
-                    >
-                      Open playlist on Spotify
-                    </a>
                     <p className="text-gray-300 leading-relaxed">{item.description}</p>
-                    <div className="space-y-2 text-gray-300">
-                      <p className="font-semibold text-cyan-300">Playlist tracks</p>
-                      {playlistTracks.map((track) => (
-                        <p key={track}>{track}</p>
-                      ))}
-                    </div>
                   </div>
                 </div>
               );
@@ -83,7 +116,7 @@ export default function Entertainment() {
             return (
               <div
                 key={item.title}
-                className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-cyan-500/10 transition hover:-translate-y-1 hover:bg-white/10"
+                className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-cyan-500/10 transition hover:-translate-y-1 hover:bg-white/10"
               >
                 <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{item.title}</h2>
                 <p className="text-gray-300 leading-relaxed">{item.description}</p>
@@ -97,8 +130,8 @@ export default function Entertainment() {
             <h3 className="text-xl font-semibold text-cyan-300 mb-3">Movie Recommendations</h3>
             <ul className="space-y-3 text-gray-300">
               <li>• Inception</li>
-              <li>• The Grand Budapest Hotel</li>
-              <li>• Black Mirror</li>
+              <li>• Life of Pie</li>
+              <li>• 3 Idiots</li>
             </ul>
           </div>
           <div className="rounded-3xl bg-white/5 p-8 border border-white/10">
