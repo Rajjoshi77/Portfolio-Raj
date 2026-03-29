@@ -35,7 +35,7 @@ export default function NavBar() {
           Dashboard
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
         </Link>
-        {["achievement", "projects", "aboutMe", "contact"].map((page) => (
+        {["achievement", "projects", "aboutMe", "entertainment", "contact"].map((page) => (
           <Link key={page} href={`/${page}`} className="relative text-lg group">
             {page.charAt(0).toUpperCase() + page.slice(1)}
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
@@ -137,6 +137,7 @@ export default function NavBar() {
                 { label: "achievement", href: "/achievement" },
                 { label: "projects", href: "/projects" },
                 { label: "aboutMe", href: "/aboutMe" },
+                { label: "entertainment", href: "/entertainment" },
                 { label: "contact", href: "/contact" },
               ].map((item) => (
                 <Link key={item.label} href={item.href} className="text-gray-200" onClick={() => setMobileOpen(false)}>{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Link>
