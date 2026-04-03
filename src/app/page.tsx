@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 
 export default function Home() {
   return (
-  <main className="min-h-screen bg-transparent text-white">
+    <main className="min-h-screen bg-transparent text-white">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-20">
         {/* Left Text Section */}
@@ -12,8 +12,7 @@ export default function Home() {
             Hi, I&apos;m <span className="text-cyan-400">Raj Joshi</span>
           </h1>
           <p className="text-gray-300 text-lg">
-            I’m a passionate full-stack developer focused on building modern web
-            apps with clean design, smooth UX, and AI-powered functionality.
+            a developer who genuinely enjoys building things for the web. I like turning ideas into interactive, clean, and visually appealing experiences that people actually enjoy using.
           </p>
           <div className="flex gap-4">
             <a
@@ -47,13 +46,13 @@ export default function Home() {
 
         {/* Right Image Section */}
         <div className="mt-10 md:mt-0">
-            <Image
-              src="/profile.jpg"
-              alt="Profile Picture"
-              width={300}
-              height={300}
-              className="rounded-full border-4 border-cyan-500 shadow-lg hover:scale-105 transition"
-            />
+          <Image
+            src="/profile.jpg"
+            alt="Profile Picture"
+            width={300}
+            height={300}
+            className="rounded-full border-4 border-cyan-500 shadow-lg hover:scale-105 transition"
+          />
         </div>
       </section>
     </main>
