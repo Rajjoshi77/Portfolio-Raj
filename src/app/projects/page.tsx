@@ -71,7 +71,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 flex flex-col items-center px-4 py-10">
+    <div className="min-h-screen bg-transparent flex flex-col items-center px-4 py-10">
 
       {/* Header with Gradient */}
       <motion.div

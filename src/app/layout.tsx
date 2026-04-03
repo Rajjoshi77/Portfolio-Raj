@@ -27,8 +27,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-white min-h-screen relative`}
       >
+        {/* Global Background Video */}
+        <div className="fixed inset-0 -z-50 w-full h-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/background.mp4" type="video/mp4" />
+          </video>
+          {/* Dark Overlay to make text readable */}
+          <div className="absolute inset-0 bg-slate-900/80"></div>
+        </div>
+
         <Suspense fallback={<div />}> 
           <NavBar />
         </Suspense>

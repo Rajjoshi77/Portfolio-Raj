@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 
 export default function Home() {
   return (
-  <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+  <main className="min-h-screen bg-transparent text-white">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-20">
         {/* Left Text Section */}
