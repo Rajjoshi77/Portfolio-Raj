@@ -13,10 +13,11 @@ export default function Projects() {
       image: "/traffic_IQ.png"
     },
     {
-      title: "Voxa-AI Platform",
-      tech: "Python, AI Models, Google Colab, Ngrok",
-      description: "Built an AI-powered platform featuring user authentication and text-to-image generation capabilities using Python-based models.",
-      link: "#",
+      title: "LessonCraft AI Lesson Planner",
+      tech: "Next.js, React, Tailwind CSS, AI Models",
+      description: "An AI-powered assistant for educators to generate structured, engaging, and standards-aligned study materials, quizzes, and lesson paths instantly.",
+      link: "https://lesson-plan-nine.vercel.app/",
+      image: "/lesson_plan.png"
     },
     {
       title: "MERN Stack Job Portal",

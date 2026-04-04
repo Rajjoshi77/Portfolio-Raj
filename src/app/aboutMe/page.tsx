@@ -23,11 +23,11 @@ export default function About() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
       >
-        Hi, I’m <span className="font-semibold text-cyan-400">Raj</span> — a developer who genuinely enjoys building things for the web. I like turning ideas into interactive, clean, and visually appealing experiences that people actually enjoy using.
+        Hi, I’m <span className="font-semibold text-cyan-400">Raj</span> — a <span className="font-semibold text-cyan-300">full-stack web developer</span> who genuinely enjoys building innovative solutions for the web. I thrive on turning complex ideas into interactive, fast, and visually appealing applications that people love to use.
         <br /><br />
-        I mainly work on <span className="font-semibold text-cyan-300">frontend development</span>, with a strong focus on <span className="font-semibold text-cyan-300">UI/UX design</span> and modern web applications using <span className="font-semibold text-cyan-300">Next.js</span> and <span className="font-semibold text-cyan-300">Tailwind CSS</span>. I pay attention to details — from smooth interactions to responsive layouts — making sure everything feels intuitive and polished.
+        With a strong foundation in <span className="font-semibold text-cyan-300">problem-solving</span>—having conquered <span className="font-semibold text-cyan-300">350+ problems on LeetCode</span>—I bring an analytical mindset to every project. I build robust, end-to-end applications using modern technologies like <span className="font-semibold text-cyan-300">Next.js</span>, <span className="font-semibold text-cyan-300">Tailwind CSS</span>, and reliable backend systems, ensuring highly scalable architectures.
         <br /><br />
-        I’m always exploring new tools and improving my skills. For me, it’s not just about writing code — it’s about creating something meaningful and well-crafted.
+        Beyond writing clean code, I pride myself on having <span className="font-semibold text-cyan-300">excellent communication skills</span>. This allows me to collaborate effectively in teams and translate requirements into technical realities seamlessly. For me, development is more than just logic—it's about crafting meaningful, polished, and impactful user experiences.
       </motion.p>
 
       {/* Skills / Tech Stack */}
