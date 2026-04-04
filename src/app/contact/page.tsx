@@ -53,24 +53,49 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, topic: prev.topic === topic ? "" : topic }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (progress < 100) return; // Basic validation
     setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        topic: "",
-        message: ""
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY",
+          subject: `New Message from ${formData.firstName} - ${formData.topic}`,
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 2000);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSuccess(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          topic: "",
+          message: ""
+        });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        console.error("Error submitting form", result);
+        alert("Something went wrong! Please check your access key or try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -125,13 +150,13 @@ export default function Contact() {
               </div>
 
               <div className="flex gap-3 mt-3">
-                <a href="#" className="p-1.5 bg-white/10 rounded-full hover:bg-[#00d4ff] hover:text-black transition-colors text-sm">
+                <a href="https://github.com/Rajjoshi77" className="p-1.5 bg-white/10 rounded-full hover:bg-[#00d4ff] hover:text-black transition-colors text-sm">
                   <FiGithub />
                 </a>
-                <a href="#" className="p-1.5 bg-white/10 rounded-full hover:bg-[#00d4ff] hover:text-black transition-colors text-sm">
+                <a href="https://www.linkedin.com/in/raj-piyushkumar-joshi-90a699311/" className="p-1.5 bg-white/10 rounded-full hover:bg-[#00d4ff] hover:text-black transition-colors text-sm">
                   <FiLinkedin />
                 </a>
-                <a href="#" className="p-1.5 bg-white/10 rounded-full hover:bg-[#00d4ff] hover:text-black transition-colors text-sm">
+                <a href="https://twitter.com/" className="p-1.5 bg-white/10 rounded-full hover:bg-[#00d4ff] hover:text-black transition-colors text-sm">
                   <FiTwitter />
                 </a>
               </div>
