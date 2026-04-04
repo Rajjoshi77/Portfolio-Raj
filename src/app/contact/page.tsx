@@ -26,7 +26,7 @@ export default function Contact() {
     topic: "",
     message: ""
   });
-  
+
   const [progress, setProgress] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -39,7 +39,7 @@ export default function Contact() {
     if (formData.email.trim() && /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) fieldsFilled++;
     if (formData.topic) fieldsFilled++;
     if (formData.message.trim()) fieldsFilled++;
-    
+
     setProgress((fieldsFilled / 5) * 100);
   }, [formData]);
 
@@ -57,7 +57,7 @@ export default function Contact() {
     e.preventDefault();
     if (progress < 100) return; // Basic validation
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
@@ -77,9 +77,9 @@ export default function Contact() {
     <div className={`min-h-screen bg-transparent text-white flex justify-center items-center py-12 px-4 relative overflow-hidden ${dmSans.className}`}>
 
       <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
-        
+
         {/* Left Info Panel */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -121,9 +121,9 @@ export default function Contact() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </div>
                 <h3 className={`${syne.className} text-lg font-semibold mb-1`}>Available</h3>
-                <p className="text-gray-400" style={{fontSize: "0.65rem", lineHeight: "1rem"}}>Open to collabs & freelance</p>
+                <p className="text-gray-400" style={{ fontSize: "0.65rem", lineHeight: "1rem" }}>Open to collabs & freelance</p>
               </div>
-              
+
               <div className="flex gap-3 mt-3">
                 <a href="#" className="p-1.5 bg-white/10 rounded-full hover:bg-[#00d4ff] hover:text-black transition-colors text-sm">
                   <FiGithub />
@@ -140,7 +140,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Right Form Panel */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -148,49 +148,49 @@ export default function Contact() {
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden shadow-2xl">
             {/* Progress Bar */}
             <div className="absolute top-0 left-0 w-full h-1 bg-white/10">
-              <motion.div 
-                className="h-full bg-[#00d4ff]" 
-                initial={{ width: 0 }} 
-                animate={{ width: `${progress}%` }} 
+              <motion.div
+                className="h-full bg-[#00d4ff]"
+                initial={{ width: 0 }}
+                animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.3 }}
               />
             </div>
-            
+
             <form onSubmit={handleSubmit} className="mt-2 flex flex-col gap-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1">
                   <label className="text-xs font-medium text-gray-300">First Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
                     className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#00d4ff] transition-colors"
-                    placeholder="John"
+                    placeholder="Raj"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
                   <label className="text-xs font-medium text-gray-300">Last Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
                     className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#00d4ff] transition-colors"
-                    placeholder="Doe"
+                    placeholder="Joshi"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-medium text-gray-300">Email Address</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#00d4ff] transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="Rajj@example.com"
                 />
               </div>
 
@@ -202,11 +202,10 @@ export default function Contact() {
                       key={topic}
                       type="button"
                       onClick={() => handleTopicClick(topic)}
-                      className={`px-3 py-1.5 rounded-full text-xs transition-all border tracking-wide ${
-                        formData.topic === topic 
-                          ? "bg-[#00d4ff] text-black border-[#00d4ff] font-semibold" 
-                          : "bg-white/5 text-gray-300 border-white/10 hover:border-[#00d4ff]/50 hover:bg-white/10"
-                      }`}
+                      className={`px-3 py-1.5 rounded-full text-xs transition-all border tracking-wide ${formData.topic === topic
+                        ? "bg-[#00d4ff] text-black border-[#00d4ff] font-semibold"
+                        : "bg-white/5 text-gray-300 border-white/10 hover:border-[#00d4ff]/50 hover:bg-white/10"
+                        }`}
                     >
                       {topic}
                     </button>
@@ -221,7 +220,7 @@ export default function Contact() {
                     {formData.message.length}/500
                   </span>
                 </div>
-                <textarea 
+                <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -248,11 +247,10 @@ export default function Contact() {
                     key="submit"
                     type="submit"
                     disabled={isSubmitting || progress < 100}
-                    className={`w-full py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-all mt-2 ${
-                      progress < 100 
-                        ? "bg-white/10 text-gray-400 cursor-not-allowed" 
-                        : "bg-[#00d4ff] text-black hover:bg-[#00b5dd] shadow-[0_0_15px_rgba(0,212,255,0.3)]"
-                    }`}
+                    className={`w-full py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-all mt-2 ${progress < 100
+                      ? "bg-white/10 text-gray-400 cursor-not-allowed"
+                      : "bg-[#00d4ff] text-black hover:bg-[#00b5dd] shadow-[0_0_15px_rgba(0,212,255,0.3)]"
+                      }`}
                     whileHover={progress === 100 ? { scale: 1.02 } : {}}
                     whileTap={progress === 100 ? { scale: 0.98 } : {}}
                   >
